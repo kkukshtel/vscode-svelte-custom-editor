@@ -1,0 +1,62 @@
+{
+	"name": "svelte-custom-editor",
+	"displayName": "Svelte Custom Editor",
+	"description": "Svelte Custom Editor Template",
+	"version": "0.0.1",
+	"enableProposedApi": true,
+	"publisher": "afterschool",
+	"engines": {
+		"vscode": "^1.46.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCustomEditor:editorCustoms.customData"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/kkukshtel/vscode-svelte-custom-editor.git"
+	},
+	"main": "./out/extension.js",
+	"contributes": {
+		"customEditors": [
+			{
+				"viewType": "editorCustoms.customData",
+				"displayName": "Custom Data",
+				"selector": [
+					{
+						"filenamePattern": "*.{customData}"
+					}
+				]
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint . --ext .ts,.tsx",
+		"watch": "tsc -w -p ./",
+		"svelte-build": "rollup -c",
+		"svelte-dev": "rollup -c -w",
+		"start": "sirv public"
+	},
+	"devDependencies": {
+		"@types/node": "^12.12.0",
+		"@types/vscode": "^1.46.0",
+		"@typescript-eslint/eslint-plugin": "^3.0.2",
+		"@typescript-eslint/parser": "^3.0.2",
+		"eslint": "^7.1.0",
+		"typescript": "^3.9.4",
+		"@rollup/plugin-commonjs": "^14.0.0",
+		"@rollup/plugin-node-resolve": "^8.0.0",
+		"rollup": "^2.3.4",
+		"rollup-plugin-livereload": "^1.0.0",
+		"rollup-plugin-svelte": "^5.0.3",
+		"rollup-plugin-terser": "^7.0.0",
+		"svelte": "^3.0.0"
+	},
+	"dependencies": {
+		"sirv-cli": "^1.0.0"
+	}
+}
